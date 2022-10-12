@@ -1,0 +1,56 @@
+#main-header{
+    height: 70px;
+    background-color:bisque;
+}
+
+#main-header nav ul {
+    text-align: center;
+}
+#main-header nav li {
+    display: inline-block;
+    height: 70px;
+    padding: 0 5px;
+    transition: background-color 0.5s;
+}
+#main-header nav li a {
+    height: 70px;
+    display: block;
+    line-height: 70px;
+    color: black;
+    text-decoration: none;
+}
+#main-header nav li:hover {
+    background-color:#fff;
+}
+
+#main-header nav li:hover a {
+    color: red;
+}
+
+/*
+menu a tendina
+*/
+#main-header .has-children > a::after{
+    content: ">";
+    margin-left:5px;
+    display:inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+}
+#main-header li.has-children:hover > a::after{
+    transform: rotate(-90deg);
+}
+#main-header .has-children ul{
+    position: absolute;
+    width: 200px;
+    background-color:bisque;
+    display: none;
+}
+#main-header .has-children:hover ul{
+    display: block;
+}
+#main-header .has-children ul li{
+    display: block
+}
+
+

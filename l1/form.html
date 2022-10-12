@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post">
+
+        <input type="text" readonly value="mario" name="nome" placeholder="Inserisci il nome">
+        <input type="email" required name="email" placeholder="Inserisci l'email">
+        <input type="password" minlength="5" required name="password" placeholder="La tua password">
+        <input type="date" disabled name="password" placeholder="La tua password">
+        <input type="tel" name="telefono" placeholder="il tuo numero">
+        <input type="number" max="110" name="anni" placeholder="La tua età">
+
+        <hr>
+
+        <input id="consenso" name="consenso" type="checkbox" checked> 
+        <label for="consenso">Acconsento</label>
+
+        <hr>
+
+        <input id="m" value="m" name="gender" type="radio">
+        <label for="m">M</label>
+        
+        <input id="f" value="f" name="gender" type="radio">
+        <label for="f">F</label>
+
+        <input id="altro" value="altro" name="gender" type="radio" checked>
+        <label for="altro">Altro</label>
+        <hr>
+        <select name="city">
+            <option value="">--</option>
+            <option value="milano" selected>Milano</option>
+            <option value="roma">Roma</option>
+        </select>
+
+        <textarea name="messaggio" cols="30" rows="10"></textarea>
+
+        <hr>
+        <button type="submit">Invia</button>
+        <input type="submit" value="Invia con input">
+        <hr>
+        <button type="button">Bottone finto</button>
+        <input type="button" value="Input bottone finto">
+        <hr>
+        <button type="reset">Reset</button>
+        <input type="reset" value="Reset input">
+
+    </form>
+
+</body>
+</html>

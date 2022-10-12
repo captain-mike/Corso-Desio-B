@@ -1,0 +1,40 @@
+:root{
+    --main-color: #990000;
+    font-size: 20px;
+}
+
+@font-face{
+    font-family: FontPersonale;
+    src: url("../font/Railway.ttf") format('truetype')
+    /*
+    url("../font/Railway.woff2") format('woff2'),
+    url("../font/Railway.woff") format('woff')
+    */
+}
+
+/* esempio di varibili in css */
+.red-bg{
+    background-color: var(--main-color)
+}
+
+
+.f1{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.f2 span{
+    font-size: 1rem;/*eredita dall'elemento root la dimensione*/
+    font-family: FontPersonale;
+}
+
+.f3{
+    font-size: 16px
+}
+.f3 span{
+    font-size: 1em;/*eredita dal genitore la dimensione*/
+}
+
+

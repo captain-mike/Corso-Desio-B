@@ -1,0 +1,56 @@
+/*stili generali*/
+h1, h2, h3, h4, h5, h6{/*1,1,1,1,1,1 => nessuna somma*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*altri stili*/
+#green{/* peso: 100 */
+    color:green;
+}
+.blue{/* peso: 10 */
+    color: blue;
+    font-weight: bold;
+}
+div{/* preso: 1 */
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.blue.sfondo-rosso{/* 1 + 10 + 10 = 21 */
+    border: 1px solid #000
+}
+
+/*
+Altre selezioni possibili
+
+div#nomeid
+div.nomeclasse
+
+div#nomeid.nomeclasse.altraclasse
+div.nomeclasse.altraclasse#nomeid
+*/
+
+div span{/* 1 + 1 = 2*/
+    font-weight: bold;
+    border-bottom:3px dotted #000
+}
+
+.articoli article h3{
+    color: #808080;
+}
+.articoli article > span{
+    font-weight: bold;
+}
+
+/* tabella */
+
+table{
+    width: 100%;
+}
+table td{
+    border: 1px solid #000;
+}
+
+table tr:nth-of-type(odd){
+    background-color: #ccc;
+}

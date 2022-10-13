@@ -1,0 +1,22 @@
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+
+.blog{
+    background-color: blue
+}
+
+.post{
+    height: 100px;
+    width: calc(100% / 4 - 10px - 0.3rem);
+    background-color: bisque;
+    display: inline-block;
+    margin: 5px;
+    
+    /* per eliminare le spaziature degli elementi inline-block
+    margin-left: -0.3rem;
+    margin-bottom: -0.3rem*/
+}

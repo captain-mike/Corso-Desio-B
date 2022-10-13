@@ -1,0 +1,67 @@
+
+/*img{
+    max-width: 100%;
+}*/
+#immagine-gestita{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000
+}
+#immagine-gestita img{
+    max-width: 100%;
+}
+
+
+#immagine-tagliata{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+#immagine-tagliata img{
+    margin-top: -74px;
+    margin-left: -65px;
+}
+
+/*
+CSS background
+*/
+
+.blocchi{
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+}
+
+.bg1{
+    background-image: url(../img/download.png);
+    background-size: 50px 100px;/* X: 50, Y:100*/
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    /*background-position: 100px 50px; X: 100, Y:50*/
+}
+.bg2{
+    background-image: url(../img/download.png);
+    background-size: 100px 100px;/* X: 50, Y:100*/
+    background-position: center bottom;
+}
+
+.bg3{
+    background-image: url(../img/download.png);
+    background-size: contain;
+    background-color: red;
+    background-repeat: no-repeat;
+    height: 210px;
+}
+
+.bg4{
+    background-image: url(../img/download.png);
+    background-size: cover;
+    height: 210px;
+    background-color: red;
+}
+.bg5{
+    background-image: url(../img/download.png), url(../img/logo-g3dfe94058_1920.png);
+    background-size: 50px 50px, 100px 100px;
+    background-repeat: no-repeat;
+    background-position: left center, right center;
+}

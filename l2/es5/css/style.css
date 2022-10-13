@@ -6,7 +6,7 @@
 #main-header nav ul {
     text-align: center;
 }
-#main-header nav li {
+#main-header nav > ul > li {
     display: inline-block;
     height: 70px;
     padding: 0 5px;
@@ -40,17 +40,20 @@ menu a tendina
 #main-header li.has-children:hover > a::after{
     transform: rotate(-90deg);
 }
+
+
 #main-header .has-children ul{
     position: absolute;
     width: 200px;
     background-color:bisque;
-    display: none;
+    /*display: none;*/
+    height: 0;/*riduco l'altezza a 0*/
+    overflow: hidden;/*faccio si che se il contenitore è alto zero i contenuti vengano nascosti*/
+    transition: height 0.5s;
 }
 #main-header .has-children:hover ul{
-    display: block;
-}
-#main-header .has-children ul li{
-    display: block
+    /*display: block;*/
+    height: 150px;
 }
 
 

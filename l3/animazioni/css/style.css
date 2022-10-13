@@ -1,0 +1,71 @@
+body{
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+
+.quadrato{
+    border: 1px solid #000;
+    height: 100px;
+    width: 100px;
+}
+
+.quadrato:nth-of-type(1){
+    background-color: red;
+    animation-name:animazione1;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animazione1{
+    from{margin-left:0}
+    to{margin-left:300px}
+}
+
+
+.quadrato:nth-of-type(2){
+    background-color: rgb(178, 1, 1);
+    animation-name:animazione2;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+}
+.quadrato:nth-of-type(3){
+    background-color: rgb(134, 0, 0);
+    animation-name:animazione2;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.quadrato:nth-of-type(4){
+    background-color: rgb(75, 0, 0);
+    animation-name:animazione2;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0.3s;
+}
+@keyframes animazione2{
+    0%{margin-left:0}
+    50%{margin-left:300px}
+    100%{margin-left:0}
+}
+
+.quadrato:nth-of-type(5){
+    background-color: rgb(25, 0, 255);
+    animation-name:animazione3;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.quadrato:nth-of-type(6){
+    background-color: rgb(25, 0, 255);
+    animation-name:animazione3, animazione2;
+    animation-duration:2s, 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes animazione3 {
+    0%{background-color: rgb(25, 0, 255);transform:rotate(0deg) rotateX(0deg) rotateY(0deg)}
+    25%{background-color: rgb(0, 170, 255);transform:rotate(10deg) rotateX(10deg) rotateY(10deg)}
+    50%{background-color: rgb(246, 255, 0);transform:rotate(300deg) rotateX(300deg)rotateY(300deg)}
+    75%{background-color: rgb(0, 255, 34);transform:rotate(280deg) rotateX(280deg)rotateY(280deg)}
+}

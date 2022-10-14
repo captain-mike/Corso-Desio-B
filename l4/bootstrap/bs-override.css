@@ -1,0 +1,16 @@
+:root{
+    --bs-primary-rgb:151, 0, 0;
+}
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;
+}
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;
+}
+
+.h6.big-title{
+    font-size:5rem
+}

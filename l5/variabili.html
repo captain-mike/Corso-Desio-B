@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="test">titolo</h1>
+
+    <script>
+        let a = 1;
+        var b = 2;
+
+        console.log( typeof a )//con typeof ottengo una stringa contenente l'indicazione del tipo di dato
+
+        {
+            let y = 3;
+            console.log(y)
+        }
+        //console.log(y) y is not defined
+
+        {
+            var q = 4;//non è soggetta a blockscope
+            console.log(q)
+        }
+        console.log(q)
+
+        let m;//undefined in partenza, ha uno scope globale
+        {
+            m = 5//posso accedere alla let perchè dichiarata in scope globale
+        }
+        console.log(m)//5
+
+
+        function test(){
+            var g = 6;
+        }
+        //console.log(g)//g non è disponibile fuori dalla funzione
+
+        var h;
+        function test(){
+            h = 6;//posso farlo perchè h ha scope globale
+        }
+
+        //costanti
+
+        const P = 7;
+        //P = 6 //Assignment to constant variable.
+
+        {
+            const F = 8//è soggetta a blockscope
+        }
+        //console.log(F) F is not defined
+
+        const OGGETTO = {
+            nome:'Mario',
+            cognome:'Rossi'
+        }
+
+        OGGETTO.nome = 'Marco'
+        console.log(OGGETTO)
+
+        /*
+        Posso congelare l'oggetto con Object.freeze()
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze?retiredLocale=it
+        */
+
+        
+
+    </script>
+</body>
+</html>

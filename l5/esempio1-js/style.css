@@ -1,0 +1,14 @@
+.blocco{
+    height: 200px;
+    width: 200px;
+    background-color:yellow;
+    display: inline-block;
+}
+
+#nuovo .blocco{
+    background-color:orange;
+}
+
+.blocco.active{
+    background-color:red !important;
+}

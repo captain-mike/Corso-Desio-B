@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr = [];//array vuoto
+
+        let arrPieno = [
+            1,//number
+            '3',//string
+            [],//array(oggetto)
+            {}//object
+        ]
+
+        console.log(typeof arrPieno)//object
+        console.log(Array.isArray(arrPieno))//true
+
+        let lettere = ['a', 'b', 'c', 'd', 'e', 'f'];
+        console.log(lettere.length)
+
+        console.log('ciao'.length)//la proprietà length è comune anche alle stringhe
+
+        /*lettura di un singolo valore*/
+        console.log(lettere[0])//a
+
+        console.log('ciao'[0])//c
+
+
+        /*
+        Metodi degli array
+        */
+        lettere = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+        //elimina/aggiungi alla fine
+
+        {
+            let eliminato = lettere.pop()//elimina dalla fine di un array
+            console.log(lettere, `Hai eliminato la lettera ${eliminato}`)
+            lettere.push('h')
+            console.log(lettere)//aggiunge alla fine dell'array
+        }
+
+        //elimina/aggiungi all'inizio
+
+        {
+            let eliminato = lettere.shift()//elimina dall'inizio di un array
+            lettere.unshift(0)//aggiunge all'inizio dell'array
+            console.log(lettere)
+        }
+
+        {
+
+            let animali = ['Gatto', 'Cane', 'Serpente', 'Giraffa', 'Leone']
+            let partenza = 1;
+            let quantità = 1;
+            animali.splice(partenza, quantità);//elimino un solo elemento
+            console.log(animali)
+
+            animali.splice(3, 1, 'Tigre');//elimino il leone e inserisco al suo posto la tigre
+            console.log(animali)
+        }
+
+        function trovaElimina(stringa) {
+            let animali = ['Gatto', 'Cane', 'Serpente', 'Giraffa', 'Leone']
+            let index = animali.indexOf(stringa)//restituisce l'indice della posizione del valore ricercato all'interno dell'array, oppure -1
+            console.log(index)
+            if (index != -1) {
+                animali.splice(index, 1);
+            }
+            return animali;
+        }
+        console.log(trovaElimina('Gatto'))
+
+
+        function TrovaEliminaUtentiByEmail(email) {
+
+            let utenti = [
+                {
+                    id: 1,
+                    name: "Leanne Graham",
+                    username: "Bret",
+                    email: "Sincere@april.biz",
+                    phone: "1-770-736-8031 x56442",
+                    website: "hildegard.org",
+                    company: {
+                        name: "Romaguera-Crona",
+                        catchPhrase: "Multi-layered client-server neural-net",
+                        bs: "harness real-time e-markets"
+                    }
+                },
+                {
+                    id: 2,
+                    name: "Ervin Howell",
+                    username: "Antonette",
+                    email: "Shanna@melissa.tv",
+                    phone: "010-692-6593 x09125",
+                    website: "anastasia.net",
+                    company: {
+                        name: "Deckow-Crist",
+                        catchPhrase: "Proactive didactic contingency",
+                        bs: "synergize scalable supply-chains"
+                    }
+                },
+                {
+                    id: 3,
+                    name: "Clementine Bauch",
+                    username: "Samantha",
+                    email: "Nathan@yesenia.net",
+                    phone: "1-463-123-4447",
+                    website: "ramiro.info",
+                    company: {
+                        name: "Romaguera-Jacobson",
+                        catchPhrase: "Face to face bifurcated interface",
+                        bs: "e-enable strategic applications"
+                    }
+                },
+                {
+                    id: 4,
+                    name: "Patricia Lebsack",
+                    username: "Karianne",
+                    email: "Julianne.OConner@kory.org",
+                    phone: "493-170-9623 x156",
+                    website: "kale.biz",
+                    company: {
+                        name: "Robel-Corkery",
+                        catchPhrase: "Multi-tiered zero tolerance productivity",
+                        bs: "transition cutting-edge web services"
+                    }
+                },
+                {
+                    id: 5,
+                    name: "Chelsey Dietrich",
+                    username: "Kamren",
+                    email: "Lucio_Hettinger@annie.ca",
+                    phone: "(254)954-1289",
+                    website: "demarco.info",
+                    company: {
+                        name: "Keebler LLC",
+                        catchPhrase: "User-centric fault-tolerant solution",
+                        bs: "revolutionize end-to-end systems"
+                    }
+                }
+            ]
+
+            let index = utenti.findIndex(function(u){
+                return u.email == email//trovo l'indice dell'utente con una specifica email
+            })
+
+            console.log(index);
+
+            utenti.splice(index,1)//uso l'indice per fare l'eliminazione
+            return utenti;
+
+        }
+        console.log(TrovaEliminaUtentiByEmail('Sincere@april.biz'))
+
+
+        //filter, find, map
+
+        let numeri = [1,2,3,4,5,6,7,50,80]
+
+        {
+            let numeriTrovati = [];
+            numeri.forEach(function(n){
+                if(n > 5){
+                    numeriTrovati.push(n)
+                }
+            });
+            console.log(numeriTrovati)
+        }
+
+        {
+            //filter restituisce sempre un array(anche vuoto)
+            let numeriTrovati = numeri.filter(function(n){
+                return n > 5
+            })
+            //let numeriTrovati = numeri.filter((n) => n > 5)
+            console.log(numeriTrovati)
+        }
+
+        {
+            //restituisce un solo valore, quello che restituisce true
+            let numeroTrovato = numeri.find(function(n){
+                return n > 5
+            })
+            console.log(numeroTrovato)
+        }
+        
+        {
+            //map si utilizza per effettuare modifiche ad un array e generarne una copia modificata
+            let numeriModificati = numeri.map(function(n){
+                return n * 2
+            })
+            console.log(numeriModificati)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

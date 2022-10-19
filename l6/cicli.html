@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        let frutta = ['Pere', 'Mele', ' Banane', 'Uva']
+        for (let i = 0; i < frutta.length; i++) {
+            document.write(frutta[i] + ' ')
+        }
+
+        document.write('<hr>')
+
+        frutta.forEach((el, i) => document.write(i + '-' + el + ', '))
+
+        document.write('<hr>')
+
+        let fruttaMod = frutta.map(el => `<b>${el}</b>`)
+        document.write(fruttaMod)
+
+        document.write('<hr>')
+
+        frutta.map(el => `<b>${el}</b>`).forEach((el, i) => document.write(i + '-' + el + ', '))
+
+        document.write('<hr>')
+
+        for (let lettera of 'Lorem Ipsum') {
+            document.write(lettera + '<br>')
+        }
+
+        document.write('<hr>')
+
+        for (let frutto of frutta) {
+            document.write(frutto + ' ');
+        }
+
+        document.write('<hr>')
+
+        let fruttoObj = {
+            nome: 'Mela',
+            prezzo: 0.5,
+            qty: 10
+        }
+        document.write('<ul>')
+        for (let prop in fruttoObj) {
+            document.write(`<li>${prop}: ${fruttoObj[prop]}</li>`)
+        }
+        document.write('</ul>')
+
+        document.write('<hr>')
+
+        let fruttiObjArray = [
+            {
+                nome: 'Mela',
+                prezzo: 0.5,
+                qty: 10
+            },
+            {
+                nome: 'Pera',
+                prezzo: 0.4,
+                qty: 1
+            },
+            {
+                nome: 'Banana',
+                prezzo: 0.99,
+                qty: 20
+            },
+            {
+                nome: 'Ananas',
+                prezzo: 1.99,
+                qty: 2
+            }        
+        ]
+
+        let colonneMostrate = Object.keys(fruttiObjArray[0]);//['nome','prezzo','qty']
+
+        colonneMostrate.shift()//rimuovo il primo elemento, così facendo rimuovo la prima colonna della tabella
+       
+
+        document.write('<table>')
+            document.write('<tr>')
+                for(let prop in fruttiObjArray[0]){
+                    if(colonneMostrate.includes(prop)){
+                        document.write(`<th>${prop}</th>`)
+                    }
+                }
+            document.write('</tr>')
+
+            for(let frutto of fruttiObjArray){
+                document.write('<tr>')
+                    for(let prop in frutto){
+                        if(colonneMostrate.includes(prop)){
+                            document.write(`<td>${frutto[prop]}</td>`)
+                        }
+                    }
+                document.write('</tr>')
+            }
+        document.write('</table>')
+
+
+        /*
+        Altri metodi ciclici degli array
+        */
+
+        let x = [1,2,'3'];
+
+        let checkIfNumberExists = n => typeof n == 'number';
+
+        let controllo1 = x.every(checkIfNumberExists)//false
+        let controllo2 = x.some(checkIfNumberExists)//true
+        console.log(controllo1, controllo2)
+
+        let numeri = [1,20,30,60,50,40,70,80,90]
+        let somma = numeri.reduce((p,c)=> p + c)
+        let moltiplicaz = numeri.reduce((p,c)=> p * c)
+        let maggiore = numeri.reduce((p,c)=> p < c ? c : p)
+        let minore = numeri.reduce((p,c)=> p > c ? c : p)
+
+        console.log(somma, moltiplicaz, maggiore, minore)
+
+
+
+        /*callbacks*/
+
+
+        function scrivi(testo, fn){
+            document.write(fn(testo))
+        }
+
+        scrivi('ciao', t => `<b>${t}</b>`)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

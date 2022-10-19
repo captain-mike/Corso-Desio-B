@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+
+        const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+        //come si fa con jquery
+        $.ajax({
+            url: apiUrl,
+        }).done((data)=> console.log(data))
+
+        //come si fa oggi con js
+        fetch(apiUrl)
+        .then(data => data.json())
+        .then(data => console.log(data))
+
+        
+    </script>
+    
+
+</body>
+</html>

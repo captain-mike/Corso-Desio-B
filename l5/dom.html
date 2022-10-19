@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="testoRosso">Testo</div>
+    <div class="sfondoGiallo">Testo</div>
+    <div class="sfondoGiallo">Testo</div>
+    <div>Testo</div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>    
+
+        function jsClassico(){
+
+            let testoRosso = document.getElementById("testoRosso")//1 solo elemento
+            console.dir(testoRosso)
+            testoRosso.style.color = 'red';
+
+            let sfondoGiallo = document.getElementsByClassName('sfondoGiallo')//una lista di elementi
+            console.log(sfondoGiallo)
+
+            sfondoGiallo[0].style.backgroundColor = 'yellow';
+            sfondoGiallo[1].style.backgroundColor = 'yellow';
+
+            let div = document.getElementsByTagName('div')//una lista di elementi
+            div[3].style.fontWeight = 'bold'
+            
+        }
+        //jsClassico()
+        
+        
+        function jsES6(){
+
+            //queryselector mi permette di selezionare un solo elemento, attraverso l'uso di una qualsiasi query di css
+            //se trova una lista di elementi, restituisce solo il primo
+            let testoRosso = document.querySelector("#testoRosso")//1 solo elemento
+            console.dir(testoRosso)
+            testoRosso.style.color = 'red';
+
+            //restituisce una nodeList, quindi una lista di elementi che può essere ciclata
+            let sfondoGiallo = document.querySelectorAll('.sfondoGiallo')
+            console.log(sfondoGiallo)
+            sfondoGiallo[0].style.backgroundColor = 'yellow';
+            sfondoGiallo[1].style.backgroundColor = 'yellow';
+
+            let div = document.querySelectorAll('div')
+            div[3].style.fontWeight = 'bold'
+        }
+        //jsES6()
+
+
+        function jjQuery(){
+            let testoRosso = $('#testoRosso')
+            testoRosso.css('color','red')
+
+            let sfondoGiallo = $('.sfondoGiallo')
+            sfondoGiallo.css('background-color','yellow')
+
+            let div = $('div');
+            div.eq(3).css('font-weight','bold')
+        }
+        jjQuery()
+    </script>
+</body>
+</html>

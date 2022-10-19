@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        saluto();//le funzioni sono soggette ad hoisting
+        function saluto(){
+            console.log('ciao');
+        }
+
+        function grassetto(testo){
+            return `<b>${testo}</b>`;
+        }
+        document.write(grassetto('Prova'));
+        
+        function creaTag(testo, tag){
+            return `<${tag}>${testo}</${tag}>`;
+        }
+        document.write(creaTag('Prova2','div'));
+
+        /*
+        Arrow Functions
+        */
+
+        let salutoFreccia = () => console.log('ciao');
+        salutoFreccia();
+
+        let grassettoFreccia = testo => `<b>${testo}</b>`;
+        console.log(grassettoFreccia('Testo per la funzione'));
+
+        let creaTagFreccia = (testo, tag) => `<${tag}>${testo}</${tag}>`;
+        console.log(creaTagFreccia('Testo per la funzione freccia','span'));
+
+
+        let emailNonConsentite = ['info@esempio.it','info@example.com'];
+        let validazione = email => {
+            if(emailNonConsentite.includes(email)){
+                return 'Non puoi usare questa email';
+            }else{
+                return 'Email consentita';
+            }
+        }
+
+        console.log(validazione('info@esempio.it'));
+
+        //freccia + ternario
+        let validazioneOneLine = email => emailNonConsentite.includes(email) ? 'Non puoi usare questa email':'Email consentita';
+
+
+
+
+    </script>
+</body>
+</html>

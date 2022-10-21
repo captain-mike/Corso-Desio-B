@@ -1,0 +1,25 @@
+#menu-toggle{
+    margin-left:300px
+}
+#menu-off-canvas{
+    width: 300px;
+    background-color:bisque;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    left:-300px;
+}
+
+.spazio{
+    height: 90vh;
+    background-color:black
+}
+
+.parallax{
+    background-image: url(../soroush-khaksar-lqurHZLVJfA-unsplash.jpg);
+    height: 400px;
+    background-size: cover;
+    background-position: 0 439px;
+}

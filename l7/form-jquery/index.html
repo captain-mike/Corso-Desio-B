@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form id="myForm">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" id="nome" placeholder="Nome" class="form-control notEmpty">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <input type="text" id="cognome" placeholder="cognome" class="form-control notEmpty">
+                        </div>
+                        <div class="col-6">
+                            <input type="email" id="email" placeholder="email" class="form-control notEmpty">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <input type="password" id="password" class="form-control notEmpty" placeholder="password">
+                            <input type="password" id="conferma-password" class="form-control notEmpty" placeholder="conferma password">
+                        </div>
+                        <div class="col-6">
+                            <select id="city" class="form-control">
+                                <option value="">--</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary">Registrati</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="conferma" class="alert alert-success d-none">
+                    Form inviato
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
